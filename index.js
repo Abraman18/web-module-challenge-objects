@@ -162,10 +162,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array, ratingNumber) {
+   let newArray = [];
+   for (let i = 0; i < array.length; i++){
+     if (array[i].rating === ratingNumber || array[i].rating === ratingNumber+.5) {
+       newArray.push(array[i]);
+     }
+   }
+   return newArray;
   }
-
+// console.log(getReviewByRating(reviews, 4));
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -179,10 +185,16 @@ Use the getLongReviews function below to do the following:
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }
   ]
 */
-
-function getLongReviews(/* code here */) {
-    /* code here */
+  function getLongReviews(array) {
+    newArray = [];
+    for(let i = 0; i< array.length; i++){
+        if(array[i].feedback.split(" ").length > 15){
+        newArray.push(array[i]);
+        }
+    }
+    return newArray;
   }
+  // console.log(getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -201,12 +213,20 @@ Use the carMaker function below to do the following:
   Then we called car1.drive(100)
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
-
-
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(miles){
+  var newCar = {
+    odometer: miles,
+    drive: function(distance){
+      newCar.odometer = miles + distance; 
+      return newCar;
+    } 
+  }
+return newCar;
 }
+
+let ferrari = carMaker(1000);
+ferrari.drive(250);
+console.log(ferrari);
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
