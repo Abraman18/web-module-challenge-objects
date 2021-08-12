@@ -106,10 +106,9 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 function addReview(val1, val2, val3){
- 
-  return reviews.push({
-    name: val1, rating: val2, feedback: val3
-  } );
+  let newArray = {};
+   newArray.push({name: val1, rating: val2, feedback: val3});
+  return newArray;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
