@@ -105,10 +105,9 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(val1, val2, val3){
-  let newArray = {};
-   newArray.push({name: val1, rating: val2, feedback: val3});
-  return newArray;
+function addReview(array, val1, val2, val3){
+   array.push({name: val1, rating: val2, feedback: val3});
+  return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -141,8 +140,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array){
+  return array[array.length - 1].name + " gave the restaurant a " + array[array.length - 1].rating + " star review, and their feedback was: " + array[array.length - 1].feedback;
 } 
 
 
