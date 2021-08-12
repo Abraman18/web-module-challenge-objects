@@ -15,8 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(val1, val2, val3){
+  const newObject = {
+    name:val1 , price:val2, category:val3
+    }
+  return newObject;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -28,7 +31,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem("pizza", 5, "lunch"));
+console.log(createMenuItem("steak", 12, "dinner"));
+console.log(createMenuItem("pancakes", 6, "breakfast"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,7 +52,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function (string) {
+    if (string == "teacher") {
+      return this.price * .75;
+    }if (string == "student") {
+      return this.price * .75;
+    } else{
+      return this.price * .90;
+    }
+  } 
 }
 
 
@@ -68,7 +81,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5]);
 
 
 
@@ -77,7 +90,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 console.log(reviews);
 
 
@@ -92,8 +105,11 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(val1, val2, val3){
+ 
+  return reviews.push({
+    name: val1, rating: val2, feedback: val3
+  } );
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -107,10 +123,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return array[number].name + " gave the restaurant a " + array[number].rating + " star review, and their feedback was: " + array[number].feedback;
 }
-
+console.log(getReviewByIndex(reviews, 0));
 
   
 
